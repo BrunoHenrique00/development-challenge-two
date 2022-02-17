@@ -10,13 +10,13 @@ import { usePacients } from '../../hooks/usePacients';
 
 export default function PacientsTable(){
 
-  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [pacientToEdit, setPacientToEdit] = useState({});
   const { pacients , deletePacient } = usePacients()
   
   const handleEditOpen = (pacient) => {
     setPacientToEdit(pacient)
-    setEditModalOpen(true)
+    setIsEditModalOpen(true)
   }
     
   return (
@@ -34,8 +34,8 @@ export default function PacientsTable(){
 
             <PacientModal 
               pacient={pacientToEdit} 
-              isOpen={editModalOpen}
-              handleClose={() => setEditModalOpen(false)} 
+              isOpen={isEditModalOpen}
+              handleClose={() => setIsEditModalOpen(false)} 
             />
 
           </TableBody>

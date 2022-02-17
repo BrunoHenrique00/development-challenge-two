@@ -1,16 +1,21 @@
 import { Button, TableCell, TableRow } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { toast } from "react-toastify";
-
+import CircularProgress from '@mui/material/CircularProgress';
+import { useState } from "react";
 
 export default function Tablerow({ pacient , handleEditOpen , deletePacient}){
 
+    const [isDeleteLoading, setIsDeleteLoading] = useState(false)
+
     const handleDelete = async (id) => {
+        setIsDeleteLoading(true)
         await deletePacient(id)
         toast.success('Excluido com sucesso!')
+        setIsDeleteLoading(false)
     }
 
-    function getDate(date){
+    function formatDate(date){
         let newDate = new Date(date)
         newDate.setDate(newDate.getDate() + 1)
         return newDate.toLocaleDateString('pt-BR',{
@@ -29,7 +34,7 @@ export default function Tablerow({ pacient , handleEditOpen , deletePacient}){
             </TableCell>
             <TableCell align="right">
                 {
-                    getDate(pacient.date_birth)
+                    formatDate(pacient.date_birth)
                 }
             </TableCell>
             <TableCell align="right">{pacient.email}</TableCell>
@@ -47,7 +52,11 @@ export default function Tablerow({ pacient , handleEditOpen , deletePacient}){
             <TableCell >
                 <Button 
                 variant='contained' 
-                startIcon={<DeleteIcon />}
+                startIcon={
+                isDeleteLoading ?
+                <CircularProgress color="neutral" size={25} /> :
+                <DeleteIcon />
+                }
                 onClick={() => handleDelete(pacient.id)}
                 color='error'
                 >
