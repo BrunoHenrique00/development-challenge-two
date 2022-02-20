@@ -11,7 +11,7 @@ exports.handler = async (event) => {
                 email: data.email,
                 address: data.address,
                 date_birth: data.date_birth,
-                id: data.email
+                id: data.id
             }
         }).promise()
         

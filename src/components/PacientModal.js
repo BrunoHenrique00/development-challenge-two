@@ -53,11 +53,14 @@ export default function PacientModal({ isOpen, handleClose , pacient}){
             toast.error(error)
         }
     }
-    async function handleEditPacient(){
+    async function handleEditPacient(pacientId){
         try {
             const data = getInputRefs()
-            await updatePacient(data)
-            toast.success('Paciente criado com sucesso!')
+            await updatePacient({
+                ...data,
+                id: pacientId
+            })
+            toast.success('Paciente editado com sucesso!')
             handleClose()
         } catch (error) {
             toast.error(error)
@@ -118,7 +121,7 @@ export default function PacientModal({ isOpen, handleClose , pacient}){
                             width: '50%',
                             marginX: 'auto'
                         }}
-                        onClick={pacient ? handleEditPacient : handleCreatePacient}
+                        onClick={pacient ? () => handleEditPacient(pacient.id) : handleCreatePacient}
                         >
                         { pacient ? 'Salvar' : 'Criar'}
                     </Button>
