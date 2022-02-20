@@ -1,5 +1,6 @@
 const AWS = require('aws-sdk')
 const dynamo = new AWS.DynamoDB.DocumentClient()
+const crypto = require('crypto')
 
 exports.handler = async (event) => {
     const data = JSON.parse(event['body'])
@@ -11,7 +12,7 @@ exports.handler = async (event) => {
                 email: data.email,
                 address: data.address,
                 date_birth: data.date_birth,
-                id: data.email
+                id: crypto.randomUUID()
             }
         }).promise()
         
