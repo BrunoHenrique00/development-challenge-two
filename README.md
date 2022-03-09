@@ -1,39 +1,72 @@
-# Development challenge
+<p align="center">
+   <img src="https://github.com/BrunoHenrique00/development-challenge-two/blob/master/public/medcloud-white.svg" alt="IG News" width="280"/>
+</p>
 
-Medcloud's challenge for Dev Full Stack.
+<p align="center">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-eba417">
+</p>
 
-## Goal
+> <b>MedCloud App</b> é o desafio proposto pela MedCloud para a vaga de Full-Stack Developer. Consistem em um CRUD de pacientes, tudo isso usando React.js e Material UI no front-end. No back-end é usado a infraestrutura da AWS, tal como, API GATEWAY, AWS Lambdas e DynamoDB.
 
-- To develop a web application to manage patient registers (Patient's name, birth date, email and address) using a cloud database.
+# :pushpin: Conteúdo
 
-## Required
+- [Tecnologias](#computer-tecnologias)
+- [Executando](#construction_worker-executando)
+- [Desafios](#atom_symbol-desafios)
+- [Autores](#computer-autores)
+- [Licença](#closed_book-licença)
 
-- You need to develop both the front-end and the back-end.
-- In the front-end you MUST use React.
-- In the back-end you MUST use the AWS free-tier.
-- The patient data should not be static or local.
-- AWS RDS MySQL, PostgreSQL or DynamoDB as database.
-- AWS Lambda for serveless computing.
-- AWS API Gateway for managing your REST API.
+### Fotos
 
-## Extra Points
+<div>
+   <img src="https://i.imgur.com/Y7IcG0o.png" width="500px" />
+   <img src="https://i.imgur.com/4756x9b.png" width="500px" />
+   <img src="https://i.imgur.com/hSLyfeq.png" width="500px" />
+   <img src="https://i.imgur.com/3rRJby2.png" width="500px" />
+</div>
 
-- Cache the data in-browser.
-- Edit and delete operations.
-- Use Material UI - https://material-ui.com.
-- A cool design.
+# :computer: Tecnologias
 
-## References
+Este projeto foi feito utilizando as seguintes tecnologias:
 
-- Intro to React: https://reactjs.org/tutorial/tutorial.html.
-- Core Components of Amazon DynamoDB: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html.
-- Getting Started with DynamoDB: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStartedDynamoDB.html.
-- Getting started with AWS Lambda: https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html.
-- Create a REST API with Lambda integrations in Amazon API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-getting-started-with-rest-apis.html.
+- [React](https://reactjs.org/)
+- [AWS Lambdas]()
+- [AWS DynamoDB]()
+- [Context API]()
+- [Axios](https://github.com/axios/axios)
+- [Material UI]()
 
-## Delivery
+# :construction_worker: Executando
 
-You MUST fork this repository to your own account and push you code to it. 
-When you finish it, you must send a email to cv@medcloud.com.br with your curriculum, fork and how many time you managed to complete the challenge.
+```bash
+# Clone o Repositório
+$ git@github.com:BrunoHenrique00/development-challenge-two.git
+```
 
-Good luck! Any doubts, feel free to send an email to cv@medcloud.com.br.
+```bash
+# Acesse a pasta do projeto
+$ cd development-challenge-two
+```
+
+```bash
+# Crie um arquivo .env.local e configure as váriaveis de ambiente
+
+# AWS URL API
+REACT_APP_URL_API=
+```
+
+```bash
+# Baixe as dependendências
+$ yarn
+```
+
+```bash
+# Execute
+$ yarn start
+```
+
+Acesse <http://localhost:3000> para ver o resultado.
+
+# :closed_book: Licença
+
+Este projeto está sob a licença [MIT](./LICENSE).
